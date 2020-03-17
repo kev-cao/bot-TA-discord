@@ -13,7 +13,7 @@ Here is the current list of commands (all commands must be called with the prefi
 ```
 join 'Name' 	        - Adds a user to the queue with the provided name.
 leave 			- Removes the user from the queue.
-list	    	- Lists the number of users in the queue, and lists the next five members of the queue.
+list	               	- Lists the number of users in the queue, and lists the next five members of the queue.
 pos		  	- Gets the position of the user in the queue.
 help			- Lists this list.
 ```
