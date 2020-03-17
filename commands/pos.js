@@ -4,7 +4,7 @@ const qOperation = require("../lib/queue.js");
 
 module.exports.run = (client, message, args) => {
   // Find the user in the queue.
-  const index = qOperation.indexOf(client.queue, message.author);
+  const index = qOperation.indexOf(client.queue, message.member);
 
   if (index !== -1) {
     message.reply(`you are in position ${index + 1}.`);

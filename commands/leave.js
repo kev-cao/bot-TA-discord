@@ -4,7 +4,7 @@ const qOperation = require("../lib/queue.js");
 
 module.exports.run = (client, message, args) => {
   // Remove the user from the queue if the user exists in the queue.
-  const index = qOperation.remove(client.queue, message.author);
+  const index = qOperation.remove(client.queue, message.member);
 
   if (index !== -1) {
     message.reply("you have been removed from the queue.");
