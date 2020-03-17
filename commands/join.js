@@ -7,7 +7,7 @@ module.exports.run = (client, message, args) => {
     return;
   }
 
-  const author = message.author;
+  const author = message.member.displayName;
   const queue = client.queue;
   const name = args.join(" ");
 
