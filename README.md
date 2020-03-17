@@ -25,7 +25,7 @@ The minimum required permissions may be edited in a config.json file.
 ```
 next			- Gets and removes the next user from the queue.
 clear			- Clears the queue.
-remove '@Users' 	     - Removes a specified user/list of users from the queue.
+remove '@Users' 	  - Removes a specified user/list of users from the queue.
 ```
 
 <br />
