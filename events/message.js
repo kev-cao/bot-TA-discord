@@ -1,7 +1,7 @@
 // message.js
 module.exports = (client, message) => {
-  // Ignore all bots to avoid loops.
-  if (message.author.bot) {
+  // Ignore all bot messages, and check that message is in "queue" channel.
+  if (message.author.bot || message.channel.name != "queue") {
     return;
   }
 
