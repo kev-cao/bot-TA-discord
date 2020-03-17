@@ -11,7 +11,7 @@ module.exports.run = (client, message, args) => {
 
     // Get first five members in queue.
     for (let i = 0; i < Math.min(5, queue.length); i++) {
-      str += `${i + 1}. ${queue[i].name} (User: ${queue[i].user.username})\n`;
+      str += `${i + 1}. ${queue[i].name} (User: ${queue[i].user.displayName})\n`;
     }
   }
 
