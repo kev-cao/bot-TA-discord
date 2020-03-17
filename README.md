@@ -4,8 +4,7 @@
 A Discord bot that maintains a queue of users. Moderators may remove from the queue.
 
 ### Required Modules
-> discord.js
-> enmap.js
+> discord.js <br /> enmap.js
 
 <br />
 
