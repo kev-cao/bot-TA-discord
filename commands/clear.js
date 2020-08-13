@@ -1,13 +1,13 @@
 // clear.js
 // Clears the queue.
-module.exports.run = (client, message, args) => {
-  const queue = client.queue;
+const adminCheck = require("../lib/adminCheck.js");
 
-  // User must have administrative powers.
-  if (!message.member.hasPermission(client.config.permission)) {
-    message.channel.send("You do not have permission to use this command.");
+module.exports.run = (client, message, args) => {
+  if (!adminCheck.hasAdmin(client, message)) {
     return;
   }
+
+  const queue = client.queue;
 
   // Clear the queue.
   client.queue = [];

@@ -43,7 +43,8 @@ filesys.readdir("./events/", (err, files) => {
     let eventName = file.split(".")[0];
     console.log(`Loading event \"${eventName}\".`);
 
-    // Link event with the event function.
+    // Link event with the event function. Null is the context (continuation).
+    // Everything else are arguments that are passed.
     client.on(eventName, event.bind(null, client));
 
     // Delete file from cache.
@@ -69,7 +70,7 @@ filesys.readdir("./commands/", (err, files) => {
     let commandName = file.split(".")[0];
 
     console.log(`Loading command \"${commandName}\".`);
-    client.commands.set(commandName, exec);
+    client.commands.set(commandName.toLowerCase(), exec);
   });
 });
 

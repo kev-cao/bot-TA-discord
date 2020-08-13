@@ -1,14 +1,14 @@
 // next.js
 // Gets the next person in line and removes them from the queue.
-module.exports.run = (client, message, args) => {
-  const channel = message.channel;
-  const queue = client.queue;
+const adminCheck = require("../lib/adminCheck.js");
 
-  // User must have administrative powers.
-  if (!message.member.hasPermission(client.config.permission)) {
-    channel.send("You do not have permission to use this command.");
+module.exports.run = (client, message, args) => {
+  if (!adminCheck.hasAdmin(client, message)) {
     return;
   }
+
+  const channel = message.channel;
+  const queue = client.queue;
 
   const next = queue.shift(); // Get the next member.
 
