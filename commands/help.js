@@ -11,9 +11,10 @@ module.exports.run = (client, message, args) => {
 
   if (message.member.hasPermission(client.config.permission)) {
     str += "\n\n__**Administrative Commands:**__\n";
-    str += "**next:**                             Gets and removes the next person in the queue.\n";
-    str += "**clear:**                            Clears the queue.\n";
-    str += "**remove *@Users*:**       Removes a specified user/list of users from the queue. Must use @mentions to specify user.";
+    str += "**next:**                                 Gets and removes the next person in the queue.\n";
+    str += "**clear:**                                Clears the queue.\n";
+    str += "**remove *@Users*:**           Removes a specified user/list of users from the queue. Must use @mentions to specify user.\n";
+    str += "**removeallstudents**      Removes all students from the server.";
   }
 
   message.channel.send(str);

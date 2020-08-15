@@ -9,6 +9,6 @@ module.exports.run = (client, message, args) => {
   if (index !== -1) {
     message.reply(`you are in position ${index + 1}.`);
   } else {
-    message.reply(`you are not in the queue. To join the queue, use \"${client.config.prefix}join *Name*\".`);
+    message.reply(`you are not in the queue. To join the queue, use \`${client.config.prefix}join *Name*\`.`);
   }
 }

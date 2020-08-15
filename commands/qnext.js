@@ -3,11 +3,12 @@
 const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {
-  if (!adminCheck.hasAdmin(client, message)) {
+  const channel = message.channel;
+
+  if (!adminCheck.hasAdmin(client, channel)) {
     return;
   }
 
-  const channel = message.channel;
   const queue = client.queue;
 
   const next = queue.shift(); // Get the next member.

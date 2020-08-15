@@ -8,7 +8,16 @@ const client = new Discord.Client();
 
 // Connect config file to client so that it can be used in other modules.
 client.config = config;
-client.queue = [];
+
+/* 
+ * Add data structures to store students.
+ * Since we're dealing with very small amounts of data, these are all
+ * represented with arrays.
+ * */
+client.queue = []; // Stores students in the regular queue.
+client.topics = []; // Stores topics.
+client.suggestions = []; // Stores suggestions for topics.
+
 
 /*
  * The structures for events and commands are as such:

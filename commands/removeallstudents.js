@@ -1,9 +1,10 @@
-// removeAllStudents.js
+// removeallstudents.js
 // Removes all students from the server.
 const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {
-  if (!adminCheck.hasAdmin(client, message)) {
+  const channel = message.channel;
+  if (!adminCheck.hasAdmin(client, channel)) {
     return;
   }
 
@@ -11,9 +12,9 @@ module.exports.run = (client, message, args) => {
 
   // First argument is a filter. Ensure that the confirmation message is from the same user that asked to remove all students.
   // Second argument states that the bot will only accept one message, and that after 15 seconds, the promise is returned.
-  message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 15000}).then(msg => {
+  channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 15000}).then(msg => {
     if (msg.first().content == 'REMOVE') {
-      message.channel.send('Removing all students...');
+      channel.send('Removing all students...');
 
       message.guild.members.cache.each(member => {
         if (typeof member.roles.cache.find(r => r.name === "Student") !== 'undefined') {
@@ -21,9 +22,9 @@ module.exports.run = (client, message, args) => {
         }
       });
     } else {
-      message.channel.send('Request cancelled.');
+      channel.send('Request cancelled.');
     }
   }).catch(() => {
-    message.channel.send('Request timed out.');
+    channel.send('Request timed out.');
   });
 };

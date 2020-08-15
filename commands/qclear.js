@@ -3,13 +3,12 @@
 const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {
-  if (!adminCheck.hasAdmin(client, message)) {
+  const channel = message.channel;
+  if (!adminCheck.hasAdmin(client, channel)) {
     return;
   }
 
-  const queue = client.queue;
-
   // Clear the queue.
   client.queue = [];
-  message.channel.send("The queue has been cleared.");
+  channel.send("The queue has been cleared.");
 }
