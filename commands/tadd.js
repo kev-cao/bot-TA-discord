@@ -1,10 +1,11 @@
 // tadd.js
 // Adds a list of topics to the topics list.
 const adminCheck = require("../lib/adminCheck.js");
+const topicOp = require("../lib/topic.js");
 
 module.exports.run = (client, message, args) => {
   const channel = message.channel;
-  if (!adminCheck.hasAdmin(client, channel)) {
+  if (!adminCheck.hasAdmin(client, message)) {
     return;
   }
 
@@ -23,4 +24,8 @@ module.exports.run = (client, message, args) => {
 
   str += `${index} topics added.`;
   message.channel.send(str);
+
+  if (index > 0) {
+    topicOp.updateTopicMessage(client, message.guild);
+  }
 }

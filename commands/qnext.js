@@ -5,7 +5,7 @@ const adminCheck = require("../lib/adminCheck.js");
 module.exports.run = (client, message, args) => {
   const channel = message.channel;
 
-  if (!adminCheck.hasAdmin(client, channel)) {
+  if (!adminCheck.hasAdmin(client, message)) {
     return;
   }
 
