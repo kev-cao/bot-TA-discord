@@ -83,5 +83,4 @@ filesys.readdir("./commands/", (err, files) => {
   });
 });
 
-
 client.login(config.token);
