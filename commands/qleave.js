@@ -1,5 +1,6 @@
 // leave.js
 // Removes a user from the queue.
+module.exports.description = "Removes user from the queue."
 const qOperation = require("../lib/queue.js");
 
 module.exports.run = (client, message, args) => {

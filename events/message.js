@@ -1,7 +1,7 @@
 // message.js
 module.exports = (client, message) => {
   // Ignore all bot messages, and check that message is in "queue" channel.
-  if (message.author.bot || (message.channel.name != "queue" && message.channel.name != "admin-channel")) {
+  if (message.author.bot || (message.channel.name != "bot-commands" && message.channel.name != "admin-channel")) {
     return;
   }
 

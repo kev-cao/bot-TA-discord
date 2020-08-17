@@ -1,5 +1,6 @@
 // pos.js
 // Gets the position of the messenger in the queue.
+module.exports.description = "Gets the position of the user in the queue."
 const qOperation = require("../lib/queue.js");
 
 module.exports.run = (client, message, args) => {

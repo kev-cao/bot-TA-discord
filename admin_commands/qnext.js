@@ -1,5 +1,6 @@
 // next.js
 // Gets the next person in line and removes them from the queue.
+module.exports.description = "Removes the next person in the queue and notifies them that they are up.";
 const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {

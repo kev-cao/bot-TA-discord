@@ -1,5 +1,6 @@
 // removeallstudents.js
 // Removes all students from the server.
+module.exports.description = "Removes all users with the Student role from the server.";
 const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {

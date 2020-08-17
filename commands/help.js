@@ -1,21 +1,52 @@
 // help.js
 // Outputs usable commands.
-module.exports.run = (client, message, args) => {
-  let str = `:grey_question: Make sure to prefix each command with \"${client.config.prefix}\".\n`;
-  str += "__**List of commands:**__\n";
-  str += "**join *Name*:**    Adds you to the queue with the provided name.\n";
-  str += "**leave:**             Removes you from the queue.\n";
-  str += "**pos:**                Outputs your position in the queue.\n";
-  str += "**list:**                 Lists the number of members in the queue, and the upcoming five members.\n";
-  str += "**help:**               Lists this list.";
+module.exports.description = "Lists all available commands and how to use them.";
 
-  if (message.member.hasPermission(client.config.permission)) {
-    str += "\n\n__**Administrative Commands:**__\n";
-    str += "**next:**                                 Gets and removes the next person in the queue.\n";
-    str += "**clear:**                                Clears the queue.\n";
-    str += "**remove *@Users*:**           Removes a specified user/list of users from the queue. Must use @mentions to specify user.\n";
-    str += "**removeallstudents**      Removes all students from the server.";
+const filesys = require("fs");
+const commandNameSpacing = 25;
+let helpMsg = "";
+let adminHelpMsg = "";
+
+// Creates the help message from the given directory. This allows the bot to only have to create it once per loadup.
+async function createHelpMsgBody(client, dir) {
+  // Creating a promise out of fs.readdir because it uses callbacks instead of promises.
+  return new Promise((resolve, reject) => {
+    // Read through all of the files to get the command names and descriptions.
+    return filesys.readdir(`./${dir}/`, (err, files) => {
+      if (err) {
+        return reject(err);
+      }
+
+      let msg = "\`\`\`ini\n";
+
+      // Loop through each file and create the respective entry for the command.
+      files.forEach(file => {
+        if (!file.endsWith(".js")) {
+          return;
+        }
+
+        let exec = require(`../${dir}/${file}`);
+        let commandName = "[" + file.split(".")[0] + "]";
+
+        msg += commandName.padEnd(commandNameSpacing, " ");
+        msg += exec.description + "\n\n";
+      });
+      msg = msg.substring(0, msg.length - 1);
+      msg += "\`\`\`";
+      resolve(msg);
+    });
+  });
+}
+
+
+module.exports.run = async (client, message, args) => {
+  if (helpMsg === "" || adminHelpMsg === "") {
+    helpMsg = `:grey_question: Make sure to prefix each command with \`${client.config.prefix}\`\n**Commands**\n`;
+    helpMsg += await createHelpMsgBody(client, "commands");
+
+    adminHelpMsg = helpMsg + "\n**Admin Commands**\n"
+    adminHelpMsg += await createHelpMsgBody(client, "admin_commands");
   }
 
-  message.channel.send(str);
+  message.channel.send(message.member.hasPermission(client.config.permission) ? adminHelpMsg : helpMsg);
 }

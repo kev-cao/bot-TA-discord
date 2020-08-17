@@ -1,5 +1,6 @@
 // list.js
 // Lists all current people in the queue.
+module.exports.description = "Lists the number of users in the queue, and lists the next five members in the queue."
 module.exports.run = (client, message, args) => {
   const queue = client.queue;
 

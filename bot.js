@@ -95,4 +95,23 @@ filesys.readdir("./commands/", (err, files) => {
   });
 });
 
+// Load admin commands.
+filesys.readdir("./admin_commands/", (err, files) => {
+  if (err) {
+    return console.error(err);
+  }
+
+  files.forEach(file => {
+    if (!file.endsWith(".js")) {
+      return;
+    }
+
+    let exec = require(`./admin_commands/${file}`);
+    let commandName = file.split(".")[0];
+
+    console.log(`Loading admin command \"${commandName}\".`);
+    client.commands.set(commandName.toLowerCase(), exec);
+  });
+});
+
 client.login(config.token);

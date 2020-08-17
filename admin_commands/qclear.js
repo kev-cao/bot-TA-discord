@@ -1,5 +1,6 @@
-// tsuggestclear.js
-// Clears all suggestions.
+// clear.js
+// Clears the queue.
+module.exports.description = "Clears the queue.";
 const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {
@@ -8,7 +9,7 @@ module.exports.run = (client, message, args) => {
     return;
   }
 
-  // Clear the suggestions list.
-  client.suggestions = [];
-  channel.send("All suggestions have been cleared.");
+  // Clear the queue.
+  client.queue = [];
+  channel.send("The queue has been cleared.");
 }

@@ -1,5 +1,6 @@
 // remove.js
 // Removes a specified user from the queue.
+module.exports.description = "Removes a specified user/list of users from the queue. Must use @mentions to specify user.";
 const qOperation = require("../lib/queue.js");
 const adminCheck = require("../lib/adminCheck.js");
 

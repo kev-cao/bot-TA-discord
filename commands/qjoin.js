@@ -1,5 +1,7 @@
 // join.js
 // Adds the messenger to the queue if they do not exist already.
+module.exports.description = "Adds user to the queue with the provided name.";
+
 module.exports.run = (client, message, args) => {
   args = args.split(/[ \n]+/g).join(" ");
   // User must have also provided a name.
