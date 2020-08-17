@@ -24,9 +24,6 @@ module.exports = (client, message) => {
     args = args.substr(i + 1);
   }
 
-  console.log(`Args: ${args}`);
-  console.log(`Cmd: ${command}`);
-
   const exec = client.commands.get(command); // The function to execute based on this command.
 
   // Execute the command.

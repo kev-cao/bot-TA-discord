@@ -17,6 +17,18 @@ client.config = config;
 client.queue = []; // Stores students in the regular queue.
 client.topics = []; // Stores topics.
 client.suggestions = []; // Stores suggestions for topics.
+client.emojiToRole = { // Maps emoji names to role names.
+  '0⃣': 'TopicZero',
+  '1⃣': 'TopicOne',
+  '2⃣': 'TopicTwo',
+  '3⃣': 'TopicThree',
+  '4⃣': 'TopicFour',
+  '5⃣': 'TopicFive',
+  '6⃣': 'TopicSix',
+  '7⃣': 'TopicSeven',
+  '8⃣': 'TopicEight',
+  '9⃣': 'TopicNine'
+};
 
 
 /*
