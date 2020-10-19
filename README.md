@@ -1,5 +1,5 @@
 
-# QueueBot
+# Teaching Assistant Bot (I can't believe it's not botTA)
 
 A Discord bot that maintains a queue of users and a list of topics that students may subscribe to. Moderators may edit the queue and list of topics.
 
