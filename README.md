@@ -55,6 +55,7 @@ The minimum required permissions may be edited in a config.json file.
 
 ### Sample Workflow
 __Using the Bot as an Admin__
+
 `!qclear` clears the queue of all students. Should be used at the end of office hours.
 
 `!qnext` pulls the next student out of the queue and sends them an @mention telling them that they are up. Should use this command in the #bot-commands channel so it will send the message there.
