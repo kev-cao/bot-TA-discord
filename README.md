@@ -83,6 +83,15 @@ prefix:			The prefix for all commands.
 permission:		The minimum permission level required to use administrative commands.
 ```
 
+Sample `config.json`:
+```json
+{
+  "token": "keep this private and do not upload it",
+  "prefix": "!",
+  "permission": "ADMINISTRATOR"
+}
+```
+
 The code can only be used if a Discord bot is created on Discord's developer website. Use the token provided by Discord once the bot is created as the value for `token` in the `config.json` file.
 
 ## Discord Server Setup
