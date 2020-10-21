@@ -8,7 +8,7 @@ During the COVID-19 pandemic, all classes at my university were forced online, a
 
 At this point, I had been working as an undergraduate instructor for nearly a year, and I wanted to create a bot that could help the instructors better manage office hours. During in-person office hours, I would maintain a queue of students on a whiteboard so that students that requested help first would be addressed first. The bot simulates this by maintaining a queue of students that the students can join, and I can call for the next student easily using the bot. 
 
-Furthermore, office hours would often become so filled with students that helping students one at a time would be too inefficient, and I would instear resort to teaching groups of students that wanted help on the same topics. As such, I added a feature where the bot could publish a list of topics set by the instructors, and students could subscribe to the topics by simply reacting to the published list with the corresponding emojis.
+Furthermore, office hours would often become so filled with students that helping students one at a time would be too inefficient, and I would instead resort to teaching groups of students that wanted help on the same topics. As such, I added a feature where the bot could publish a list of topics set by the instructors, and students could subscribe to the topics by simply reacting to the published list with the corresponding emojis.
 
 ### Features
 
