@@ -17,12 +17,12 @@ module.exports.run = (client, message, args) => {
     if (msg.first().content == 'REMOVE') {
       channel.send('Removing all students...');
 
-      message.guild.members.cache.each(member => {
-        if (typeof member.roles.cache.find(r => r.name === "Student") !== 'undefined') {
-          console.log(`Removing ${member.nick}`);
-          member.kick();
-        }
-      });
+      message.guild.members.fetch().then(members =>
+        members.each(member => {
+          if (typeof member.roles.cache.find(r => r.name === "Student") !== 'undefined') {
+            member.kick();
+          }
+        }));
     } else {
       channel.send('Request cancelled.');
     }

@@ -1,0 +1,28 @@
+{
+  "name": "bot-ta-discord",
+  "version": "1.0.0",
+  "description": "[![License](https://img.shields.io/badge/license-MIT-informational)](https://github.com/defCoding/bot-TA-discord/blob/master/LICENSE) [![Discord API](https://img.shields.io/badge/api-Discord-7289da)](https://discord.com/developers/docs/intro)",
+  "main": "bot.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "enmap": "^5.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defCoding/bot-TA-discord.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/defCoding/bot-TA-discord/issues"
+  },
+  "homepage": "https://github.com/defCoding/bot-TA-discord#readme",
+  "keywords": []
+}
