@@ -19,6 +19,7 @@ module.exports.run = (client, message, args) => {
 
       message.guild.members.cache.each(member => {
         if (typeof member.roles.cache.find(r => r.name === "Student") !== 'undefined') {
+          console.log(`Removing ${member.nick}`);
           member.kick();
         }
       });
