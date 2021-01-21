@@ -1,7 +1,7 @@
 # Teaching Assistant Bot (I can't believe it's not botTA)
 
 [![License](https://img.shields.io/badge/license-MIT-informational)](https://github.com/defCoding/bot-TA-discord/blob/master/LICENSE)
-[![Discord API](https://img.shields.io/badge/api-Discord-7289da)](https://discord.com/developers/docs/intro)
+[![Discord API](https://img.shields.io/badge/api-Discord.js-7289da)](https://discord.js.org/#/)
 
 A Discord bot that maintains a queue of users and a list of topics that students may subscribe to. Moderators may edit the queue and list of topics.
 
