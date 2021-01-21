@@ -70,7 +70,7 @@ __Using the Bot as an Admin__
 
 `!tsuggestclear` will remove all suggestions from the suggestions list.
 
-`!tsuggestremove` will remove a specific suggestion by their position in the list. For example, !tsuggestremove 4.
+`!tsuggestremove` will remove a specific suggestion by their position in the list. For example, `!tsuggestremove 4`.
 
 Students can join the queue if they have specific questions that they need individual help on, or smaller questions that don't need an explanation over an entire section of an assignment. We should check the queue every so often, and pull from it when we see fit.
 
