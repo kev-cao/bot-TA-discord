@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const Enmap = require("enmap");
 const filesys = require("fs");
+const QueueManager = require("./lib/queueManager.js").QueueManager;
 
 // Create connection client to connect to Discord.
 const config = require("./config.json");
@@ -14,7 +15,7 @@ client.config = config;
  * Since we're dealing with very small amounts of data, these are all
  * represented with arrays.
  * */
-client.queue = []; // Stores students in the regular queue.
+client.queueManager = new QueueManager(); // Queue Manager.
 client.topics = []; // Stores topics.
 client.suggestions = []; // Stores suggestions for topics.
 client.emojiToRole = { // Maps emoji names to role names.

@@ -1,6 +1,6 @@
 // remove.js
 // Removes a specified user from the queue.
-module.exports.description = "Removes a specified user/list of users from the queue. Must use @mentions to specify user.";
+module.exports.description = "Removes a specified user/list of users from their queue. Must use @mentions to specify user.";
 const qOperation = require("../lib/queue.js");
 const adminCheck = require("../lib/adminCheck.js");
 
@@ -19,6 +19,5 @@ module.exports.run = (client, message, args) => {
   }
 
   // Remove all mentioned users.
-  usersToRemove.forEach(user => { qOperation.remove(client.queue, user); });
-  channel.send("Specified users removed.");
+  channel.send(client.queueManager.removeUsers(usersToRemove));
 } 

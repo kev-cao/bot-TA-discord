@@ -1,6 +1,6 @@
 // next.js
 // Gets the next person in line and removes them from the queue.
-module.exports.description = "Removes the next person in the queue and notifies them that they are up.";
+module.exports.description = "Pulls the next person from the specified queue and notifies them.";
 const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {
@@ -10,14 +10,11 @@ module.exports.run = (client, message, args) => {
     return;
   }
 
-  const queue = client.queue;
-
-  const next = queue.shift(); // Get the next member.
-
-  // Notify the user.
-  if (next !== undefined) {
-    channel.send(`May the following user come forth:\n**User:** ${next.user.toString()}\n**Name:** ${next.name}`);
-  } else {
-    channel.send("The queue is empty.");
+  if (args.length <= 0) {
+    message.reply("please provide the queue index of the queue you wish to query.");
+    return;
   }
+
+
+  channel.send(client.queueManager.dequeue(parseInt(args)));
 }

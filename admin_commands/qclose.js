@@ -1,6 +1,6 @@
 // clear.js
 // Clears the queue.
-module.exports.description = "Clears the specified queue.";
+module.exports.description = "Closes the specified queue.";
 const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {
@@ -10,10 +10,10 @@ module.exports.run = (client, message, args) => {
   }
 
   if (args.length <= 0) {
-    message.reply("please provide the queue index of the queue you wish to clear.");
+    message.reply("please provide the queue index of the queue you wish to close.");
     return;
   }
 
   // Clear the queue.
-  channel.send(client.queueManager.dequeue(parseInt(args)));
+  channel.send(client.queueManager.closeQueue(parseInt(args)));
 }
