@@ -50,7 +50,7 @@ The minimum required permissions may be edited in a config.json file.
 
 [qremove]                Removes a specified user/list of users from their queue. Must use @mentions to specify user.
 
-[qtoggle]                Toggles the specified queue's lock state.
+[qtoggle]                Toggles the specified queue to locked/unlocked.
 
 [removeallstudents]      Removes all users with the Student role from the server.
 
