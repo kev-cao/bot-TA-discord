@@ -18,13 +18,15 @@ Here is the current list of commands (all commands must be called with the prefi
 ```ini
 [help]                   Lists all available commands and how to use them.
 
-[qjoin]                  Adds user to the queue with the provided name.
+[qjoin]                  Adds user to a specified queue.
 
-[qleave]                 Removes user from the queue.
+[qleave]                 Removes the user from their queue.
 
-[qlist]                  Lists the number of users in the queue, and lists the next five members in the queue.
+[qlist]                  List all of the available queues.
 
-[qpos]                   Gets the position of the user in the queue.
+[qpeek]                  Displays the number of users in a specified queue and shows the next five.
+
+[qpos]                   Gets the position of the user in their queue.
 
 [tsuggest]               Adds a topic suggestion to the list. Max characters is 30.
 
@@ -36,11 +38,15 @@ Here is the current list of commands (all commands must be called with the prefi
 There are also some administrative commands that may be used by the moderators of the server only.
 The minimum required permissions may be edited in a config.json file.
 ```ini
-[qclear]                 Clears the queue.
+[qclear]                 Clears the specified queue.
 
-[qnext]                  Removes the next person in the queue and notifies them that they are up.
+[qclose]                 Closes the specified queue.
 
-[qremove]                Removes a specified user/list of users from the queue. Must use @mentions to specify user.
+[qcreate]                Creates a queue with a given name.
+
+[qnext]                  Pulls the next person from the specified queue and notifies them.
+
+[qremove]                Removes a specified user/list of users from their queue. Must use @mentions to specify user.
 
 [removeallstudents]      Removes all users with the Student role from the server.
 
@@ -56,13 +62,34 @@ The minimum required permissions may be edited in a config.json file.
 <br />
 
 ### Sample Workflow
+
+The bot manages multiple queues at once. Each student is limited to being in one queue. Students can view all the available queues with `!qlist`. Each queue will be displayed along with an index representing the queue.
+
+__Using the Bot as a Student__
+
+`!qjoin index` will add a student to the specified queue.
+
+`!qpeek index` will show the contents of the queue.
+
+`!qleave` will remove the student from the queue they are in.
+
+`!qpos` will show the position of the student in their queue.
+
+`!tsuggest suggestion` will add a topic suggestion to a list.
+
+`!tsuggestlist` will show all topic suggestions.
+
 __Using the Bot as an Admin__
 
-`!qclear` clears the queue of all students. Should be used at the end of office hours.
+`!qcreate name` will create a queue, where `name` is the name of the new queue.
 
-`!qnext` pulls the next student out of the queue and sends them an @mention telling them that they are up. Should use this command in the #bot-commands channel so it will send the message there.
+`!qclose index` will close the specified queue.
 
-`!qremove` will remove a designated person from the queue. It removes anyone that you @mention in the same command.
+`!qclear index` clears the specified queue of all students. Should be used at the end of office hours.
+
+`!qnext index` pulls the next student out of the specified queue and sends them an @mention telling them that they are up. Should use this command in the #bot-commands channel so it will send the message there.
+
+`!qremove` will remove a designated person from their queue. It removes anyone that you @mention in the same command.
 
 `!tadd` will add topics to the topics list. You can add multiple topics at once, as long as you separate them with the delimiting character |. For example, !tadd Topic 1 | Topic 2 | Topic 3. This command will have the bot update the message in the #topics channel.
 
