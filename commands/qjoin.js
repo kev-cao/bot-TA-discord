@@ -10,5 +10,3 @@ module.exports.run = (client, message, args) => {
 
   message.reply(client.queueManager.enqueueUser(parseInt(args), message.member));
 };
-
-

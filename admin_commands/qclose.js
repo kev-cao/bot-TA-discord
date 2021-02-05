@@ -1,5 +1,5 @@
-// clear.js
-// Clears the queue.
+// close.js
+// Closes the specified queue.
 module.exports.description = "Closes the specified queue.";
 const adminCheck = require("../lib/adminCheck.js");
 
