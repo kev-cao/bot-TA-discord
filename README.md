@@ -42,11 +42,15 @@ The minimum required permissions may be edited in a config.json file.
 
 [qclose]                 Closes the specified queue.
 
+[qcloseall]              Closes all queues.
+
 [qcreate]                Creates a queue with a given name.
 
 [qnext]                  Pulls the next person from the specified queue and notifies them.
 
 [qremove]                Removes a specified user/list of users from their queue. Must use @mentions to specify user.
+
+[qtoggle]                Toggles the specified queue to locked/unlocked.
 
 [removeallstudents]      Removes all users with the Student role from the server.
 
@@ -83,7 +87,9 @@ __Using the Bot as an Admin__
 
 `!qcreate name` will create a queue, where `name` is the name of the new queue.
 
-`!qclose index` will close the specified queue.
+`!qclose index` will close the specified queue and `!qcloseall` will close all queues.
+
+`!qtoggle index` will lock/unlock the specified queue.
 
 `!qclear index` clears the specified queue of all students. Should be used at the end of office hours.
 
