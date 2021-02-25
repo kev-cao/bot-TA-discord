@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const Enmap = require("enmap");
 const filesys = require("fs");
 const QueueManager = require("./lib/queueManager.js").QueueManager;
+const adminCheck = require("./lib/adminCheck.js");
 
 // Create connection client to connect to Discord.
 const config = require("./config.json");
@@ -111,7 +112,14 @@ filesys.readdir("./admin_commands/", (err, files) => {
     let commandName = file.split(".")[0];
 
     console.log(`Loading admin command \"${commandName}\".`);
-    client.commands.set(commandName.toLowerCase(), exec);
+    client.commands.set(commandName.toLowerCase(), {
+      "run": (client, message, args) => {
+        if (!adminCheck.hasAdmin(client, message)) {
+          return;
+        }
+
+        exec.run(client, message, args)
+      }});
   });
 });
 

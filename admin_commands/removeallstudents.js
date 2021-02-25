@@ -1,14 +1,9 @@
 // removeallstudents.js
 // Removes all students from the server.
 module.exports.description = "Removes all users with the Student role from the server.";
-const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {
   const channel = message.channel;
-  if (!adminCheck.hasAdmin(client, message)) {
-    return;
-  }
-
   message.reply('this command will remove all members with the Student role. This is only meant to be used at the end of the semester when all students are to be removed from the server.\nIf you could like to continue, confirm with \'**REMOVE**\'.');
 
   // First argument is a filter. Ensure that the confirmation message is from the same user that asked to remove all students.

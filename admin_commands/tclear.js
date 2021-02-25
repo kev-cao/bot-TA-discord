@@ -2,14 +2,10 @@
 // Clears all topics.
 module.exports.description = "Clears all topics in the topics list."
 
-const adminCheck = require("../lib/adminCheck.js");
 const topicOp = require("../lib/topic.js");
 
 module.exports.run = (client, message, args) => {
   const channel = message.channel;
-  if (!adminCheck.hasAdmin(client, message)) {
-    return;
-  }
 
   // Clear all topics.
   client.topics = [];

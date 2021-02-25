@@ -1,13 +1,9 @@
 // tsuggestremove.js
 // Removes a suggestion from the list.
 module.exports.description = "Removes a specified suggestion by number from the suggestions list."
-const adminCheck = require("../lib/adminCheck.js");
 
 module.exports.run = (client, message, args) => {
   const channel = message.channel;
-  if (!adminCheck.hasAdmin(client, message)) {
-    return;
-  }
 
   const list = client.suggestions;
   let str = "";
