@@ -3,6 +3,8 @@
 [![License](https://img.shields.io/badge/license-MIT-informational)](https://github.com/defCoding/bot-TA-discord/blob/master/LICENSE)
 [![Discord API](https://img.shields.io/badge/api-Discord.js-7289da)](https://discord.js.org/#/)
 
+<p align="center"><img src="https://i.imgur.com/j0B8x8D.png" width="50%" /></p>
+
 A Discord bot that maintains a queue of users and a list of topics that students may subscribe to. Moderators may edit the queue and list of topics.
 
 ## Context
