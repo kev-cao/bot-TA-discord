@@ -11,5 +11,5 @@ module.exports.run = (client, message, args) => {
   }
 
   // Clear the queue.
-  channel.send(client.queueManager.dequeue(parseInt(args)));
+  channel.send(client.queueManager.clearQueue(parseInt(args)));
 }
