@@ -60,7 +60,7 @@ The minimum required permissions may be edited in a config.json file.
 
 [tclear]                 Clears all topics in the topics list.
 
-[tremove]								 Clears a specified topic.
+[tremove]                Clears a specified topic.
 
 [tsuggestclear]          Removes all suggestions from the suggestions list.
 
