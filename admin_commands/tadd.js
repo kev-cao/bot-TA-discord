@@ -11,7 +11,7 @@ module.exports.run = (client, message, args) => {
 
   let index = 0;
   while (client.topics.length < 10 && index < topicList.length) {
-    client.topics.push(topicList[index++]);
+    client.topics.push([topicList[index++], true]);
   }
 
   let str = "";
@@ -26,3 +26,4 @@ module.exports.run = (client, message, args) => {
     topicOp.updateTopicMessage(client, message.guild);
   }
 }
+

@@ -15,9 +15,11 @@ client.config = config;
  * Add data structures to store students.
  * Since we're dealing with very small amounts of data, these are all
  * represented with arrays.
+ * my name is kevin. i used an array instead of a queue. i do false
+ * advertisement.
  * */
 client.queueManager = new QueueManager(); // Queue Manager.
-client.topics = []; // Stores topics.
+client.topics = []; // Stores topics and whether or not they are active.
 client.suggestions = []; // Stores suggestions for topics.
 client.emojiToRole = { // Maps emoji names to role names.
   '0⃣': 'TopicZero',
@@ -124,3 +126,4 @@ filesys.readdir("./admin_commands/", (err, files) => {
 });
 
 client.login(config.token);
+

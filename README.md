@@ -60,6 +60,8 @@ The minimum required permissions may be edited in a config.json file.
 
 [tclear]                 Clears all topics in the topics list.
 
+[tremove]								 Clears a specified topic.
+
 [tsuggestclear]          Removes all suggestions from the suggestions list.
 
 [tsuggestremove]         Removes a specified suggestion by number from the suggestions list.
@@ -102,6 +104,8 @@ __Using the Bot as an Admin__
 `!tadd` will add topics to the topics list. You can add multiple topics at once, as long as you separate them with the delimiting character |. For example, !tadd Topic 1 | Topic 2 | Topic 3. This command will have the bot update the message in the #topics channel.
 
 `!tclear` removes all topics from the list. The bot will also remove the message from the #topics channel. Use this if there is an old topic message still in the #topics channel and you need to clear it for the new set of topics.
+
+`!tremove index` will remove the specified topic from the list. It will remove all reactions that are associated with the topic, along with the role.
 
 `!tsuggestclear` will remove all suggestions from the suggestions list.
 
