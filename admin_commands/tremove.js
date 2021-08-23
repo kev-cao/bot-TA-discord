@@ -7,8 +7,7 @@ const topic0p = require("../lib/topic.js");
 module.exports.run = (client, message, args) => {
 	const channel = message.channel;
 
-	inactiveIndexes = args.split(/\|/g);
-	inactiveIndexes = inactiveIndexes.map(s => parseInt(s.trim()));
+	const inactiveIndexes = args.split(/\s+/g).map(s => parseInt(s.trim()));
 
 	// Get the index of topic we want removed
 	currentTopics = client.topics;

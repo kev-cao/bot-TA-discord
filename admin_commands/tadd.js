@@ -6,8 +6,7 @@ const topicOp = require("../lib/topic.js");
 module.exports.run = (client, message, args) => {
   const channel = message.channel;
 
-  topicList = args.split(/\|/g);
-  topicList = topicList.map(s => s.trim());
+  const topicList = args.split(/\|/g).map(s => s.trim());
 
   let index = 0;
   while (client.topics.length < 10 && index < topicList.length) {
