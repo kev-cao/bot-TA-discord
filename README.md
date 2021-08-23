@@ -134,7 +134,11 @@ Sample `config.json`:
 }
 ```
 
-The code can only be used if a Discord bot is created on Discord's developer website. Use the token provided by Discord once the bot is created as the value for `token` in the `config.json` file.
+The code can only be used if a Discord bot is created on Discord's developer website. Use the token provided by Discord once the bot is created as the value for `token` in the `config.json` file. To run the bot, run the command
+
+```
+$ node bot.js
+```
 
 ## Discord Server Setup
 
