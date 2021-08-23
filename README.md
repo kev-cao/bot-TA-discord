@@ -60,7 +60,7 @@ The minimum required permissions may be edited in a config.json file.
 
 [tclear]                 Clears all topics in the topics list.
 
-[tremove]                Clears a specified topic. Multiple topics to be cleared should be separated with the pipe character (|).
+[tremove]                Clears a specified topic. Multiple topics to be cleared should be separated with a space ( ).
 
 [tsuggestclear]          Removes all suggestions from the suggestions list.
 
@@ -105,7 +105,7 @@ __Using the Bot as an Admin__
 
 `!tclear` removes all topics from the list. The bot will also remove the message from the #topics channel. Use this if there is an old topic message still in the #topics channel and you need to clear it for the new set of topics.
 
-`!tremove` will remove the specified topic, given its index, from the list. You can remove multiple topics at once, as long as you separate them with the delimiting character |. For example, !tremove 0 | 2 | 3. This command will remove all reactions that are associated with the topic(s), along with the role. 
+`!tremove` will remove the specified topic, given its index, from the list. You can remove multiple topics at once, as long as you separate them with the delimiting character, " ". For example, !tremove 0  2  3. This command will remove all reactions that are associated with the topic(s), along with the role. 
 
 `!tsuggestclear` will remove all suggestions from the suggestions list.
 
