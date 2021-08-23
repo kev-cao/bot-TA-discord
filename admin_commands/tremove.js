@@ -7,19 +7,21 @@ const topic0p = require("../lib/topic.js");
 module.exports.run = (client, message, args) => {
 	const channel = message.channel;
 
+	inactiveIndexes = args.split(/\|/g);
+	inactiveIndexes = inactiveIndexes.map(s => parseInt(s.trim()));
+
 	// Get the index of topic we want removed
-	indexToClear = parseInt(args);
 	currentTopics = client.topics;
 	let returnMessage = "";
 
-	if (isNaN(indexToClear)) {
-		returnMessage = "Please enter a proper integer.";
-	} else if (indexToClear >= currentTopics.length) {
-		returnMessage = "Index given exceeds the length of current list of topics.";
-	} else {
-		currentTopics[indexToClear] = false;
-		client.topics = currentTopics;
-		returnMessage = `Topic at index ${ indexToClear } is now inactive.`;
+	try {
+		inactiveIndexes.forEach(ind => {
+			currentTopics[ind][1] = false;
+			returnMessage = `Topic at index(es) ${ inactiveIndexes } are now inactive.`;
+			client.topics = currentTopics;
+		});
+	} catch (err) {
+		returnMessage = `Please give a proper value`;
 	}
 
 	channel.send(returnMessage);
