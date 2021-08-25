@@ -17,8 +17,11 @@ module.exports.run = (client, message, args) => {
 		inactiveIndexes.forEach(ind => {
 			currentTopics[ind][1] = false;
 			returnMessage = `Topic at index(es) ${ inactiveIndexes } are now inactive.`;
-			client.topics = currentTopics;
 		});
+		client.topics = currentTopics;
+		if (client.topics.every(t => !t[1])) {
+      client.topics = [];
+    }
 	} catch (err) {
 		returnMessage = `Please give a proper value`;
 	}
